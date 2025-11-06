@@ -8,10 +8,16 @@ const io = new Server(httpServer, {
   }
 });
 
+let playerScores = [];
+
 io.on("connection", (socket) => {
   socket.on("scores", (scores) => {
-    console.log(scores);
+    playerScores.push({ ...scores, userSocketId: socket.id })
   });
+
+  setInterval(() => {
+    socket.emit("playerScores", playerScores);
+  }, 1000)
 });
 
 httpServer.listen(3000, () => {

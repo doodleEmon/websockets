@@ -1,9 +1,7 @@
-import React from 'react'
-
-export default function Input({ placeholder, handleInput, name, className }) {
+export default function Input({ placeholder, handleSubmit, name, className }) {
     return (
         <div>
-            <input name={name} onChange={handleInput} placeholder={placeholder} className={className} />
+            <input name={name} onChange={handleSubmit} placeholder={placeholder} className={className} />
         </div>
     )
 }
