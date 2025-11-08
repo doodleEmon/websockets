@@ -10,9 +10,7 @@ function App() {
   const [allScores, setAllScores] = useState([]);
 
   function connection() {
-    socket.on("connection", (socket) => {
-      // console.log("socket.io connected with server:", socket.id);
-    })
+    socket.on("connection", (socket) => { })
 
     socket.on("playerScores", (playerScores) => {
       setAllScores(playerScores);
@@ -73,4 +71,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
